@@ -14,7 +14,7 @@ RUN apt-get install -y apache2 && apt-get clean
 # Install nano
 RUN apt-get install -y nano && apt-get clean
 
-# Install and run net-tools
+# Install  net-tools
 RUN apt-get install -y net-tools && apt-get clean
 
 
@@ -27,4 +27,3 @@ RUN apt-get install -y net-tools && apt-get clean
 
 EXPOSE 80
 CMD apachectl -D FOREGROUND
-
