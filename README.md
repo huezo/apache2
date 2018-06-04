@@ -15,7 +15,7 @@ or
 run port 8080
 
 
-```docker run -d -p 80:80 --name apache2-ubuntu huezohuezo1990/apache2:latest```
+```docker run -d -p 8080:80 --name apache2-ubuntu huezohuezo1990/apache2:latest```
 
 
 
