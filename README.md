@@ -2,6 +2,16 @@
 Docker Image Apache2 Ubuntu
 
 
+# pull apache2 + php
+
+```docker pull huezohuezo1990/apache2:apache2php```
+
+# run apache2 + php
+
+```docker run -d -p 80:80 --name apache2-ubuntu huezohuezo1990/apache2:apache2php```
+
+
+
 # pull 
 
 ```docker pull huezohuezo1990/apache2```
