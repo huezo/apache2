@@ -14,9 +14,17 @@ RUN apt-get install -y apache2 && apt-get clean
 # Install nano
 RUN apt-get install -y nano && apt-get clean
 
-# Install  net-tools
-RUN apt-get install -y net-tools && apt-get clean
+# Install  net-tools y curl 
+RUN apt-get install -y net-tools curl && apt-get clean
 
+# php
+
+RUN apt install -y php libapache2-mod-php php-mysql && apt-get clean
+
+
+ADD index.html /var/www/html
+
+ADD php.php /var/www/html 
 
 #ENTRYPOINT ["/usr/sbin/apache2", "-k", "start"]
 
