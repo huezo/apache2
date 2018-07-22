@@ -19,7 +19,7 @@ RUN apt-get install -y net-tools curl && apt-get clean
 
 # php
 
-RUN apt install -y php libapache2-mod-php php-mysql && apt-get clean
+RUN apt install -y php php-cgi libapache2-mod-php php-common php-pear php-mbstring && apt-get clean
 
 
 ADD index.html /var/www/html
