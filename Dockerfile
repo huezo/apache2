@@ -12,8 +12,8 @@ RUN apt-get update
 
 # Set the timezone.
 RUN apt-get install -y tzdata 
-RUN sudo echo "America/El_Salvador " > /etc/timezone
-RUN sudo dpkg-reconfigure -f noninteractive tzdata
+RUN echo "America/El_Salvador " > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
 
 
 
