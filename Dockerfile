@@ -14,8 +14,8 @@ RUN apt-get install -y apache2 && apt-get clean
 # Install nano
 RUN apt-get install -y nano && apt-get clean
 
-# Install  net-tools
-RUN apt-get install -y net-tools && apt-get clean
+# Install  net-tools + curl
+RUN apt-get install -y net-tools curl && apt-get clean
 
 
 #ENTRYPOINT ["/usr/sbin/apache2", "-k", "start"]
