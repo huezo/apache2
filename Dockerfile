@@ -26,6 +26,11 @@ RUN apt-get install -y nano && apt-get clean
 # Install  net-tools y curl 
 RUN apt-get install -y net-tools curl && apt-get clean
 
+# ping
+
+RUN apt install -y iputils-ping && apt-get clean
+
+
 # php
 
 RUN apt install -y php php-cgi libapache2-mod-php php-common php-pear php-mbstring && apt-get clean
