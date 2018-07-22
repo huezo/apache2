@@ -17,6 +17,9 @@ RUN apt-get install -y nano && apt-get clean
 # Install  net-tools + curl
 RUN apt-get install -y net-tools curl && apt-get clean
 
+# ping
+
+RUN apt install -y iputils-ping && apt-get clean
 
 #ENTRYPOINT ["/usr/sbin/apache2", "-k", "start"]
 
