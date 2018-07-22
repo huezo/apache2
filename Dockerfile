@@ -8,6 +8,15 @@ MAINTAINER huezohuezo1990
 # Update the repository sources list
 RUN apt-get update
 
+#https://www.vmware.com/support/developer/vc-sdk/visdk400pubs/ReferenceGuide/timezone.html
+
+# Set the timezone.
+RUN apt-get install -y tzdata 
+RUN sudo echo "America/El_Salvador " > /etc/timezone
+RUN sudo dpkg-reconfigure -f noninteractive tzdata
+
+
+
 # Install and run apache
 RUN apt-get install -y apache2 && apt-get clean
 
