@@ -10,7 +10,7 @@ Docker Image Apache2 Ubuntu
 
 ```docker run -d  --restart=always  -p 80:80 --name apache2-ubuntu huezohuezo1990/apache2:latest```
 
-# docker-compose.yml
+## docker-compose.yml
 
 ```
 
@@ -78,7 +78,7 @@ swarm service port 8080 apache2:latest
 ```docker run -d  --restart=always  -p 80:80 --name apache2-ubuntu huezohuezo1990/apache2:bionic```
 
 
-# docker-compose.yml
+## docker-compose.yml
 
 
 ```
@@ -135,7 +135,7 @@ run port 8080
 
 
 
-# docker-compose.yml
+## docker-compose.yml
 
 
 ```
