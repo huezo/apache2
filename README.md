@@ -10,6 +10,42 @@ Docker Image Apache2 Ubuntu
 
 ```docker run -d  --restart=always  -p 80:80 --name apache2-ubuntu huezohuezo1990/apache2:latest```
 
+# docker-compose.yml
+
+```
+
+
+version: '3'
+
+services:
+  apache:
+#    restart: on-failure
+    restart: always
+    image: 'huezohuezo1990/apache2:latest'
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - 'apache2_volumen:/var/www/html/'
+volumes:
+  apache2_volumen:
+    driver: local
+
+
+
+```
+
+Contenedor: 
+
+```docker-compose up -d```
+
+swarm y stack :
+
+```docker stack deploy --compose-file=docker-compose.yml apache2-service```
+
+
+
+
 or
 
 run port 8080
@@ -41,6 +77,45 @@ swarm service port 8080 apache2:latest
 
 ```docker run -d  --restart=always  -p 80:80 --name apache2-ubuntu huezohuezo1990/apache2:bionic```
 
+
+# docker-compose.yml
+
+
+```
+
+version: '3'
+
+services:
+  apache:
+#    restart: on-failure
+    restart: always
+    image: 'huezohuezo1990/apache2:bionic'
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - 'apache2_volumen:/var/www/html/'
+volumes:
+  apache2_volumen:
+    driver: local
+
+
+
+```
+
+Contenedor: 
+
+```docker-compose up -d```
+
+swarm y stack :
+
+```docker stack deploy --compose-file=docker-compose.yml apache2-service```
+
+
+
+
+
+
 or
 
 run port 8080
@@ -58,9 +133,50 @@ run port 8080
 
 ```docker run -d --restart=always -p 80:80 --name apache2php-ubuntu huezohuezo1990/apache2:apache2php```
 
+
+
+# docker-compose.yml
+
+
+```
+
+version: '3'
+
+services:
+  apache:
+#    restart: on-failure
+    restart: always
+    image: 'huezohuezo1990/apache2:apache2php'
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - 'apache2_volumen:/var/www/html/'
+volumes:
+  apache2_volumen:
+    driver: local
+
+
+```
+
+Contenedor: 
+
+
+```docker-compose up -d```
+
+swarm y stack :
+
+```docker stack deploy --compose-file=docker-compose.yml apache2php-service```
+
+
+
+
+
 # run apache2 + php puerto 8081
 
 ```docker run -d --restart=always -p 8081:80 --name apache2php-ubuntu huezohuezo1990/apache2:apache2php```
+
+
 
 
 ## docker hub
