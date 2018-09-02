@@ -35,6 +35,8 @@ volumes:
 
 ```
 
+
+
 Contenedor: 
 
 ```docker-compose up -d```
@@ -42,6 +44,36 @@ Contenedor:
 swarm y stack :
 
 ```docker stack deploy --compose-file=docker-compose.yml apache2-service```
+
+
+
+
+# docker-compose.yml v3
+
+```  docker stack deploy -c docker-compose.yml apache2  ```
+
+```
+version: "3"
+services:
+  apache2:
+    image: huezohuezo1990/apache2:latest
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - apache2
+networks:
+  apache2:
+
+```
+
 
 
 
@@ -112,7 +144,31 @@ swarm y stack :
 ```docker stack deploy --compose-file=docker-compose.yml apache2-service```
 
 
+# docker-compose.yml v3
 
+```  docker stack deploy -c docker-compose.yml apache2-bionic  ```
+
+```
+version: "3"
+services:
+  apache2:
+    image: huezohuezo1990/apache2:bionic
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - apache2
+networks:
+  apache2:
+
+```
 
 
 
@@ -169,7 +225,31 @@ swarm y stack :
 ```docker stack deploy --compose-file=docker-compose.yml apache2php-service```
 
 
+# docker-compose.yml v3
 
+```  docker stack deploy -c docker-compose.yml apache2-php  ```
+
+```
+version: "3"
+services:
+  apache2:
+    image: huezohuezo1990/apache2:apache2php
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - apache2
+networks:
+  apache2:
+
+```
 
 
 # run apache2 + php puerto 8081
