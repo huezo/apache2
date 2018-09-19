@@ -48,4 +48,7 @@ ADD php.php /var/www/html
 #ENV APACHE_LOG_DIR /var/log/apache2
 
 EXPOSE 80
+EXPOSE 443
+
+
 CMD apachectl -D FOREGROUND
