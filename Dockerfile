@@ -30,4 +30,6 @@ RUN apt install -y iputils-ping && apt-get clean
 #ENV APACHE_LOG_DIR /var/log/apache2
 
 EXPOSE 80
+EXPOSE 443
+
 CMD apachectl -D FOREGROUND
