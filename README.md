@@ -74,9 +74,36 @@ networks:
 
 ```
 
+```
 
+version: "3"
+services:
+  apache2:
+    image: huezohuezo1990/apache2:latest
+    volumes:
+       - apache2-volumen:/var/www/html/
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+      replicas: 1
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - apache2
+volumes:
+  apache2-volumen:
+networks:
+  apache2:
 
+  apache2:
 
+```
 
 or
 
