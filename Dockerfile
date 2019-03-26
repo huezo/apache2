@@ -26,8 +26,7 @@ RUN apt install -y iputils-ping && apt-get clean
 # al recolector de registros de Docker
 
 RUN  ln -sf /dev/stdout /var/log/apache2/access.log 
-RUN   ln -sf /dev/stderr /var/log/apache2/error.log 
-
+RUN  ln -sf /dev/stderr /var/log/apache2/error.log 
 
 
 #ENTRYPOINT ["/usr/sbin/apache2", "-k", "start"]
