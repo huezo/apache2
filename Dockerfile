@@ -22,6 +22,11 @@ RUN apt-get install -y net-tools curl && apt-get clean
 RUN apt install -y iputils-ping && apt-get clean
 
 
+#VOLUME /var/www/html
+VOLUME ["/var/www/html", "/var/log/apache2", "/etc/apache2"]
+
+
+
 # Reenviar registros de solicitudes y errores 
 # al recolector de registros de Docker
 
