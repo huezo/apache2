@@ -41,13 +41,6 @@ ADD index.html /var/www/html
 ADD php.php /var/www/html 
 
 
-
-#VOLUME /var/www/html
-VOLUME ["/var/www/html", "/var/log/apache2", "/etc/apache2"]
-
-
-
-
 # Reenviar registros de solicitudes y errores 
 # al recolector de registros de Docker
 
