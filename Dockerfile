@@ -1,6 +1,24 @@
-FROM huezohuezo1990/apache2:bionic
+FROM  ubuntu:bionic
+#https://hub.docker.com/_/ubuntu/ 
+
 MAINTAINER huezohuezo1990 <huezohuezo1990>
 ENV LANG C.UTF-8
+
+# Update the repository sources list
+RUN apt-get update
+
+# Install and run apache
+RUN apt-get install -y apache2 && apt-get clean
+
+# Install nano
+RUN apt-get install -y nano && apt-get clean
+
+# Install  net-tools + curl
+RUN apt-get install -y net-tools curl && apt-get clean
+
+# ping
+
+RUN apt install -y iputils-ping && apt-get clean
 
 RUN apt update && apt install openssl -y 
 
@@ -27,6 +45,21 @@ EXPOSE 443
 
 ADD entrypoint.sh /opt/entrypoint.sh
 RUN chmod a+x /opt/entrypoint.sh
+
+
+# Reenviar registros de solicitudes y errores 
+# al recolector de registros de Docker
+
+RUN  ln -sf /dev/stdout /var/log/apache2/access.log 
+RUN  ln -sf /dev/stderr /var/log/apache2/error.log 
+
+
+
+ENTRYPOINT ["/opt/entrypoint.sh"]
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
+
+
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
