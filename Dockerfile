@@ -7,8 +7,20 @@ ENV LANG C.UTF-8
 # Update the repository sources list
 RUN apt-get update
 
+# Set the timezone.
+RUN apt-get install -y tzdata 
+RUN echo "America/El_Salvador " > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
+
+
 # Install and run apache
 RUN apt-get install -y apache2 && apt-get clean
+
+# php
+
+RUN apt install -y php php-cgi libapache2-mod-php php-common php-pear php-mbstring && apt-get clean
+
+
 
 # Install nano
 RUN apt-get install -y nano && apt-get clean
