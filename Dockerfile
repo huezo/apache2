@@ -1,6 +1,11 @@
 FROM  ubuntu:bionic
 #https://hub.docker.com/_/ubuntu/ 
 
+#ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND noninteractive
+
+
+
 MAINTAINER huezohuezo1990 <huezohuezo1990>
 ENV LANG C.UTF-8
 
