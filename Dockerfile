@@ -1,4 +1,6 @@
-FROM  ubuntu:bionic
+#FROM ubuntu:focal
+FROM ubuntu:focal
+
 #https://hub.docker.com/_/ubuntu/ 
 
 MAINTAINER huezohuezo1990 <huezohuezo1990>
