@@ -2,6 +2,11 @@ FROM ubuntu:bionic
 
 #https://hub.docker.com/_/ubuntu/
 
+#ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND noninteractive
+
+
+
 # File Author / Maintainer
 MAINTAINER huezohuezo1990
 
