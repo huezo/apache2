@@ -4,11 +4,21 @@ FROM ubuntu:bionic
 
 #ENV DEBIAN_FRONTEND noninteractive
 ENV DEBIAN_FRONTEND noninteractive
-
+ENV TZ=America/El_Salvador
 
 
 # File Author / Maintainer
 MAINTAINER huezohuezo1990
+
+# Set the timezone.
+ENV TZ=America/El_Salvador
+RUN apt-get update 
+RUN apt-get install -y tzdata 
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime 
+RUN echo $TZ > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
+
+
 
 # Update the repository sources list
 RUN apt-get update
